@@ -4,8 +4,8 @@ int		check_corr(float x, float y, float rec_x, float rec_y, float width, float h
 {
 	if (x < rec_x || x > rec_x + width || y < rec_y || y > rec_y + height)
 		return (0);
-	else if (x - rec_x < 1.0 || (rec_x + width) - x < 1.0 || 
-			y - rec_y < 1.0 || (rec_y + height) - y < 1.0)
+	else if (x - rec_x < 1.00000000 || (rec_x + width) - x < 1.00000000 || 
+			y - rec_y < 1.00000000 || (rec_y + height) - y < 1.00000000)
 			return (1);
 	return (2);
 }
