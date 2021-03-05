@@ -63,7 +63,7 @@ int     main(int argc, char **argv)
 	}
 	if (ret !=  EOF)
 		return(error(file, 2));
-	for (int i = 0; i < background.wi; i++)
+	for (int i = 0; i < background.he; i++)
 	{
 		write(1, result + background.wi * i, background.wi);
 		write(1, "\n", 1);
