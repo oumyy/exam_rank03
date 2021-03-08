@@ -36,14 +36,14 @@ int     main(int argc, char **argv)
 		return (error(file, 1));
 	if (!(file = fopen(argv[1], "r")))
 		return (error(file, 2));
-	if (fscanf(file, "%d %d%c %c \n", &background.wi, &background.he, &background.space, &background.c) != 4)
+	if (fscanf(file, "%d %d %c \n", &background.wi, &background.he, &background.c) != 3)
 		return (error(file, 2));
-	if (background.wi <= 0 || background.wi > 300 || background.he <= 0 || background.he > 300 || background.space != ' ')
+	if (background.wi <= 0 || background.wi > 300 || background.he <= 0 || background.he > 300)
 		return (error(file, 2));
 	memset(result, background.c, background.he * background.wi);
-	while ((ret = fscanf(file, "%c%c %f %f %f %f%c %c\n", &rect.type, &rect.sp1, &rect.x, &rect.y, &rect.wi, &rect.he, &rect.sp2, &rect.c)) == 8)
+	while ((ret = fscanf(file, "%c %f %f %f %f %c\n", &rect.type, &rect.x, &rect.y, &rect.wi, &rect.he, &rect.c)) == 6)
 	{
-		if (rect.wi <= 0 || rect.he <= 0 || rect.sp1 != ' ' || rect.sp2 != ' ' || (rect.type != 'r' && rect.type != 'R'))
+		if (rect.wi <= 0 || rect.he <= 0 || (rect.type != 'r' && rect.type != 'R'))
 			return (error(file, 2));
 		for (int y = 0; y < background.he; y++)
 		{
