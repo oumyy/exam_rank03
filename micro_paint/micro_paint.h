@@ -13,7 +13,6 @@ typedef	struct	s_bg
 	int		he;
 	int		wi;
 	char	c;
-	char	space;
 }				t_bg;
 
 typedef	struct s_rect
@@ -24,8 +23,6 @@ typedef	struct s_rect
 	float	wi;
 	float	he;
 	char	c;
-	char	sp1;
-	char	sp2;
 }				t_rect;
 
 int main(int argc, char **argv);
